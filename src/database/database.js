@@ -1,4 +1,3 @@
-// se puede llamar database.js configdb 
 // mongoose permite conectarme y hacer transacciones con mi db
 
 import mongoose from "mongoose";
