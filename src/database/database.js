@@ -1,6 +1,5 @@
 // se puede llamar database.js configdb 
 // mongoose permite conectarme y hacer transacciones con mi db
-// mongodb+srv://martingramajo08:OD74D0C4k8VVqVwr@clusterpractice.8hrcdb7.mongodb.net/
 
 import mongoose from "mongoose";
 import 'dotenv/config';

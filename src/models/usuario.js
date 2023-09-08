@@ -32,6 +32,6 @@ const usuarioSchema = new Schema({
 // se lo coloca con la primera LETRA EN MAYUS.
 // el string debe ir en singular xq la db le agrega una s al final, ejemplo 'Producto', 
 // la db lo transforma el 'Productos'.
-const Usuario = mongoose.model('Usuario', usuarioSchema);
+const Usuario = mongoose.model('usuario', usuarioSchema);
 
 export default Usuario;

@@ -38,6 +38,6 @@ const productoSchema = new Schema({
 // vamos a generar un modelo 
 // se lo coloca con la primera Mayuscula (buenas practicas)
 // el string debe ir en singular xq la db le agrega una s al final, ejemplo 'Producto'
-const Producto = mongoose.model('Producto', productoSchema);
+const Producto = mongoose.model('producto', productoSchema);
 
 export default Producto;
