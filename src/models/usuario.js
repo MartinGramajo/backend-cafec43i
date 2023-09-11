@@ -2,7 +2,7 @@ import mongoose, { Schema } from "mongoose";
 
 // const con nombre de un esquema es una plantilla
 const usuarioSchema = new Schema({
-  nombreUsuario: {
+  nombre: {
     // tipo de dato
     type: String,
     // es requerido? 
