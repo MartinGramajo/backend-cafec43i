@@ -7,6 +7,8 @@ import productoRouter from './src/routes/productos.routes.js';
 import usuariosRouter from './src/routes/usuarios.routes.js';
 import './src/database/database.js';
 
+import path from 'path' // permite indicarle el camino donde esta el index. 
+
 
 // nuestro backend lo vamos a dividir en 3 partes:
 
@@ -34,6 +36,12 @@ app.use(cors());// permite conexiones remotas.
 app.use(express.json()) // permite interpretar datos en formato json.
 app.use(express.urlencoded({ extended: true })) // ayuda a interpretar datos del body del request (ejemplo: string)
 app.use(morgan('dev')) // nos da mas información en la terminal.
+// Agregar un archivo estático (tengo q indicarle donde esta el index.html para ello usamos el path)
+// __dirname: indica la ruta donde esta ubicado el index.html
+// console.log(path.join(__dirname, '/public'));
+// app.use(express.static(path.join('G:\RollingCode\Modulo4-Backend\05-backendCafecito', '/public'))
+// app.use(express.static(path.join()
+
 
 
 // 3- crear las rutas
