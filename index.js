@@ -6,8 +6,9 @@ import 'dotenv/config'; // cuando subimos el código a production, me permite pr
 import productoRouter from './src/routes/productos.routes.js';
 import usuariosRouter from './src/routes/usuarios.routes.js';
 import './src/database/database.js';
+import path from 'path'
+import { fileURLToPath } from 'url';// permite indicarle el camino donde esta el index. 
 
-import path from 'path' // permite indicarle el camino donde esta el index. 
 
 
 // nuestro backend lo vamos a dividir en 3 partes:
@@ -15,7 +16,8 @@ import path from 'path' // permite indicarle el camino donde esta el index.
 // 1- configuraciones iniciales
 // usar express descargamos todo express en app
 const app = express();
-
+const _filename = fileURLToPath(import.meta.url);
+const _dirname = path.dirname(_filename);
 // crear una variable con express 
 // PORT hace referencia al numero de puerto que me dan en el servidor de producción.
 // como no tenemos uno, con el or lo mandamos a que inicia en el 4000.
@@ -40,7 +42,8 @@ app.use(morgan('dev')) // nos da mas información en la terminal.
 // __dirname: indica la ruta donde esta ubicado el index.html
 // console.log(path.join(__dirname, '/public'));
 // app.use(express.static(path.join('G:\RollingCode\Modulo4-Backend\05-backendCafecito', '/public'))
-// app.use(express.static(path.join()
+// app.use(express.static(path.join())
+app.use(express.static(path.join(_dirname, '/public')));
 
 
 

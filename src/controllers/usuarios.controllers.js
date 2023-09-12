@@ -20,23 +20,18 @@ export const login = async (req, res) => {
       });
     }
     //desencriptar y comparar password
-    // comparar password de body.
-    // usuario.password es el dato encriptado.
-    // si son iguales retorna un true caso contrario false.
-
-    const passwordValido = bcrypt.compareSync(password, usuario.password)
+    const passwordValido = bcrypt.compareSync(password, usuario.password);
     if (!passwordValido) {
-      return res.status(400).json({
-        mensaje: 'Correo o password invalido - password'
-      })
+      return res
+        .status(400)
+        .json({ mensaje: "Correo o password invalido - password" });
     }
 
     //responder que el usuario es correcto
-    // se pueden agregar todos los datos para mandar.
     res.status(200).json({
       mensaje: "El usuario existe",
       uid: usuario._id,
-      nombre: usuario.nombre,
+      nombre: usuario.nombreUsuario,
     });
   } catch (error) {
     console.log(error);
@@ -74,7 +69,7 @@ export const crearUsuario = async (req, res) => {
     await usuario.save();
     res.status(201).json({
       mensaje: "usuario creado",
-      nombre: usuario.nombre,
+      nombre: usuario.nombreUsuario,
       uid: usuario._id,
     });
   } catch (error) {
